@@ -1,0 +1,80 @@
+# clang-format configuration for C++ DSA Repository
+# Based on Google style with DSA-friendly modifications
+
+BasedOnStyle: Google
+
+# General formatting
+Language: Cpp
+Standard: c++17
+TabWidth: 4
+IndentWidth: 4
+UseTab: Never
+ColumnLimit: 100
+
+# Braces and spacing
+BreakBeforeBraces: Attach
+SpaceBeforeParens: ControlStatements
+SpacesInContainerLiterals: false
+SpacesInSquareBrackets: false
+SpaceAfterCStyleCast: false
+
+# Function and class formatting
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+
+# Indentation
+IndentCaseLabels: true
+IndentPPDirectives: None
+AccessModifierOffset: -2
+
+# Line breaks
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignOperands: true
+AlignTrailingComments: true
+
+# Includes
+SortIncludes: true
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^<.*\.h>'
+    Priority: 1
+  - Regex: '^<.*'
+    Priority: 2
+  - Regex: '.*'
+    Priority: 3
+
+# Comments
+ReflowComments: true
+CommentPragmas: '^ IWYU pragma:'
+
+# Penalties (for line breaking decisions)
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 60
+
+# Other
+BinPackArguments: false
+BinPackParameters: false
+CompactNamespaces: false
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+PointerAlignment: Left
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeRangeBasedForLoopColon: true 
